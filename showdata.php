@@ -41,8 +41,8 @@
                 <td>$row[Tid]</td>
                 <td>$row[Tname]</td>
                 <td>
-                  <button>Edit</button>
-                  <button type=submit>Delete</button>
+                <a class='btn btn-primary'  href='edit.php?id=".$row['Tid']."'>Edit</a>
+                <a class='btn btn-danger'  href='delete.php?id=".$row['Tid']."'>Delete</a>
                 </td>
 
             </tr>
