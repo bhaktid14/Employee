@@ -4,7 +4,7 @@ $Tid="";
 $Tname="";
 
 if($_SERVER['REQUEST_METHOD']=='GET'){
-    echo "$isset";
+   // echo "!isset($_GET["Tid"])";
  if(!isset($_GET["Tid"])){
      echo mysqli_error($conn);
      header("location:showdata.php");
