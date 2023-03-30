@@ -26,7 +26,8 @@
         </thead>
         <tbody>
         <?php 
-            $sql="select * from task";
+            $id=$_SESSION["id"];
+            $sql="select * from task where id=$id";
             $result=$conn->query($sql);
             if(!$result)
             {

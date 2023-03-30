@@ -16,7 +16,7 @@ if(isset($_POST['submit']))
         echo
         "<script> alert('wrong password..')</script>";
     }
-   }
+}
    else{
     echo
     "<script> alert('user not Regestered..')</script>";

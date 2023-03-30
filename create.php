@@ -13,8 +13,11 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
             $errorMessage="All fields are required";
             break;
         }
-        $sql="INSERT INTO crud(Tname) values($Tname) where id=$id";
+        if(isset($_SESSION['id'])){
+    
+        $sql="INSERT INTO task(Tname,id) values('$Tname','$id')";
         $result=$conn->query($sql);
+        echo mysqli_error($conn);
         if(!$result){
             $errorMessage="Invalid query".$conn->error;
             break;
@@ -23,6 +26,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
         $successMessage="Task added successfully";
         header("location:showdata.php");
         exit;
+        }
     }while(false);
 }
 ?>
@@ -56,9 +60,6 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
                 <a class="btn btn-outline-primary" href="showdata.php" role="button">Cancel</a>
             </div>
         </div>
-
-
-
     </form>
 
 </body>
